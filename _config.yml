@@ -88,7 +88,7 @@ social:
 
   - name: GitHub
     icon: github
-    username: zocuments
+    username: Zocuments
     url: https://github.com/zocuments
     desc: Find us on GitHub
     share: false
@@ -105,7 +105,7 @@ social:
     username: ""
     url: ""
     desc: Add me to your Circles
-    share: true
+    share: false
 
   - name: YouTube
     icon: youtube
@@ -126,7 +126,7 @@ social:
     username: ""
     url: ""
     desc: Follow me on Pinterest
-    share: true
+    share: false
 
   - name: SoundCloud
     icon: soundcloud
@@ -182,7 +182,7 @@ social:
     username: ""
     url: ""
     desc: Share to Hacker News
-    share: false
+    share: true
 
 # Social sharing protocols
 # These are for automatically generating sharing metadata for FB and Twitter
