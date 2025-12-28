@@ -5,14 +5,36 @@ permalink: /about/
 main_nav: true
 ---
 
-![alt text]({{ site.baseurl }}/assets/profile-placeholder.gif "Profile Picture"){:.profile}
+## About Zocuments Research
 
-Centrarium is a custom theme for Jekyll, made by [Ben Centra][bencentra] for his own blog. He'd be humbled if you liked it enough to use it as well! Installation and configuration instructions can be found in the [GitHub repository](https://github.com/bencentra/centrarium).
+Zocuments Research examines how modern AI systems reason over **document-based evidence**—and why this remains one of the hardest unsolved problems in applied machine intelligence.
 
-This page is a good place to write about yourself, your project, your product, or whatever it is your site is for. You can replace the image above, or you can get rid of it entirely. 
+While large language models excel at open-ended synthesis, they consistently fail under conditions that matter most to public institutions and regulated organizations: strict scope, incomplete records, permissions, versioning, and the requirement to justify conclusions with traceable evidence. These failures are not merely technical. They have implications for due process, institutional trust, and public accountability.
 
-You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/). And you can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+This research is grounded in a core position:  
+**document intelligence must be designed as a constrained, evidence-first system, not an open-world conversational model.**
 
-[centrarium]: https://github.com/bencentra/centrarium
-[bencentra]: http://bencentra.com
-[jekyll]: https://github.com/jekyll/jekyll
+## A Public-Purpose Capability
+
+Governments, courts, healthcare systems, regulators, and critical infrastructure organizations all depend on documents as the primary medium of institutional memory and authority. Any system that reasons over these records must:
+
+- Respect access boundaries and procedural constraints  
+- Surface uncertainty rather than hallucinate completeness  
+- Provide verifiable citations and decision trails  
+- Support human judgment instead of replacing it  
+
+Zocuments Research explores architectures and design principles that make this possible—at scale—without turning AI into an unaccountable decision-maker.
+
+## Scope, Evidence, and Refusal
+
+A recurring theme in this work is **refusal as a feature**. Systems that can say “I don’t know,” “I can’t answer from these documents,” or “You don’t have access to that evidence” are not weaker—they are safer, more trustworthy, and more aligned with democratic and legal norms.
+
+Much of this writing focuses on why these behaviors cannot be reliably achieved through prompting alone, and why they must be enforced by system design.
+
+## What This Research Is For
+
+This blog serves engineers, researchers, policymakers, and institutions interested in building AI systems that reason carefully over documents—without undermining transparency, accountability, or human oversight.
+
+The goal is not automation for its own sake, but the advancement of **document intelligence as a public-interest infrastructure**: systems that help institutions think more clearly, not decide more hastily.
+
+---
