@@ -76,8 +76,8 @@ descriptions:
 #     desc: Follow me on Twitter            # Description to display as link title, etc
 #     share: true                           # Include in the "Share" section of posts
 social:
-  - name: X
-    icon: X
+  - name: Twitter
+    icon: Twitter
     username: Zocuments
     url: https://x.com/zocuments
     desc: Follow me on X
