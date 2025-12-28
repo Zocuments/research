@@ -19,7 +19,6 @@ main_nav: true
       <strong>
         <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
       </strong>
-      <span class="post-date">- {{ post.date | date_to_long_string }}</span>
     </li>
   {% endfor %}
   </ul>
