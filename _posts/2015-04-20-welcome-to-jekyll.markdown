@@ -1,103 +1,130 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2015-04-20 08:43:59
-author: Ben Centra
-categories: Jekyll
-tags:	jekyll welcome
+title:  "Open-World Models, Closed-World Work"
+date:   2025-12-27
+author: Zocuments
+categories: Perspectives
 cover:  "/assets/instacode.png"
 ---
 
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+Large language models are trained on vast, open-ended corpora—essentially the public internet. That breadth is often framed as a superpower.
 
-## Adding New Posts
+In enterprise settings, I think it may also be a liability.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+This post is a **perspective**, not a research result. It’s a working hypothesis that helps explain why “chat with your documents” works in demos but breaks under real workplace constraints.
 
-### Tags and Categories
+## The Hot Take: The Model Can’t Naturally Stay in Its Lane
 
-If you list one or more categories or tags in the front matter of your post, they will be included with the post on the page as links. Clicking the link will bring you to an auto-generated archive page for the category or tag, created using the [jekyll-archive][jekyll-archive] gem.
+Humans are surprisingly good at narrowing scope:
 
-### Cover Images
+- *“In this job, I’m responsible for X.”*
+- *“I’m allowed to know Y.”*
+- *“I should not assume Z unless the policy explicitly says so.”*
+- *“If I’m missing information, I should ask or refuse.”*
 
-To add a cover image to your post, set the "cover" property in the front matter with the relative URL of the image (i.e. <code>cover: "/assets/cover_image.jpg"</code>).
+LLMs aren’t built that way by default.
 
-### Code Snippets
+They are optimized to produce the most plausible continuation given everything they’ve learned. When you ask a question, the model doesn’t inherently treat “the document set” as the only valid world—it treats it as **additional context** layered on top of a huge prior.
 
-You can use [highlight.js][highlight] to add syntax highlight code snippets:
+So the model does what it was trained to do: it generalizes.
 
-Use the [Liquid][liquid] `{% raw %}{% highlight <language> %}{% endraw %}` tag to add syntax highlighting to code snippets.
+## Open-World Training vs Closed-World Work
 
-For instance, this template...
-{% highlight html %}
-{% raw %}{% highlight javascript %}    
-function demo(string, times) {    
-  for (var i = 0; i < times; i++) {    
-    console.log(string);    
-  }    
-}    
-demo("hello, world!", 10);
-{% endhighlight %}{% endraw %}
-{% endhighlight %}
+Most enterprise document tasks are **closed-world** problems:
 
-...will come out looking like this:
+- Answer based on *these* documents
+- Respect *these* permission boundaries
+- Follow *this* workflow step
+- Prefer refusal over guesswork
+- Cite exactly what supports the answer
+- Don’t import outside knowledge unless explicitly allowed
 
-{% highlight javascript %}
-function demo(string, times) {
-  for (var i = 0; i < times; i++) {
-    console.log(string);
-  }
-}
-demo("hello, world!", 10);
-{% endhighlight %}
+Most LLMs are trained for an **open-world** setting:
 
-Syntax highlighting is done using [highlight.js][highlight]. You can change the active theme in [head.html](https://github.com/bencentra/centrarium/blob/2dcd73d09e104c3798202b0e14c1db9fa6e77bc7/_includes/head.html#L15).
+- The world is broad
+- The goal is to be helpful
+- Plausibility is rewarded
+- Refusal is relatively rare
+- “Filling gaps” is usually a feature, not a bug
 
-### Blockquotes
+That mismatch creates predictable failure modes.
 
-> "Blockquotes will be indented, italicized, and given a subdued light gray font. These are good for side comments not directly related to your content, or long quotations from external sources." - Some Smart Guy
+## Why This Shows Up as “Hallucinations”
 
-### Images
+What we call “hallucination” often isn’t random nonsense. It’s a rational outcome of the objective:
 
-Lightbox has been enabled for images. To create the link that'll launch the lightbox, add <code>data-lightbox</code> and <code>data-title</code> attributes to an <code>&lt;a&gt;</code> tag around your <code>&lt;img&gt;</code> tag. The result is:
+- The model has a strong prior about what “should” be true
+- The retrieved context is incomplete, ambiguous, or noisy
+- The model interpolates to produce a coherent answer anyway
+- The answer sounds right because it matches global patterns
+- The user trusts it because it’s fluent and confident
 
-<a href="//bencentra.com/assets/images/falcon9_large.jpg" data-lightbox="falcon9-large" data-title="Check out the Falcon 9 from SpaceX">
-  <img src="//bencentra.com/assets/images/falcon9_small.jpg" title="Check out the Falcon 9 from SpaceX">
-</a>
+In other words: the system behaves like an open-book assistant, even when the job requires a strict, closed-book response.
 
-For more information, check out the [Lightbox][lightbox] website.
+## Roles, Permissions, and Workflow Aren’t Optional Details
 
-### Tooltips
+Enterprise work adds constraints humans treat as first-class:
 
-With Tippy.js, you can add tooltips to your text with a little bit of HTML and JavaScript. First, create the tooltip trigger: `<span class="tooltip" id="someId">trigger</span>`. Then in a `<script>` tag at the bottom of your page, add some code to initialize the tooltip when the document is ready: `window.tooltips.push(['#someId', { content: "Content" }])`
+- **Role**: *Who am I in this system?*
+- **Permissions**: *What am I allowed to see?*
+- **Workflow step**: *What phase are we in? What rules apply here?*
+- **Versioning**: *Which document is authoritative right now?*
+- **Need-to-know**: *Even if I can access it, should I use it?*
 
-See the [Tippy.js docs](https://atomiks.github.io/tippyjs/) for additional configuration that you can provide for your tooltips.
+A model has no native concept of these things. You can describe them in text, but description is not enforcement.
 
-You can also use a Liquid `include` to import tooltip text or HTML from an external file: 
+The result is a common pattern:
 
-```
-window.tooltips.push(['#someOtherId', { content: "{% raw %}{% include tooltips/example.html %}{% endraw %}" }])
-```
+> The model answers like a well-read generalist, not like a constrained employee operating inside a bounded system.
 
-To modify the styles for tooltip triggers, find the `.tooltip` class in `_layout.scss`.
+## A More Precise Hypothesis
 
-Here's an <span class="tooltip" id="someId">example tooltip</span>, and <span class="tooltip" id="someOtherId">here's another</span>.
+Here’s the clean version of what I’m claiming:
 
-<br/>
-{% include page_divider.html %}
+> **LLMs are optimized for open-world knowledge completion, while enterprise document reasoning is a closed-world, role-constrained task. This mismatch drives overreach: hallucination, citation drift, and failure to refuse.**
 
-Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s dedicated Help repository][jekyll-help].
+This is not a “model is dumb” argument. It’s a mismatch between the training objective and the operational environment.
 
-[jekyll]:      http://jekyllrb.com
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-help]: https://github.com/jekyll/jekyll-help
-[highlight]:   https://highlightjs.org/
-[lightbox]:    http://lokeshdhakar.com/projects/lightbox2/
-[jekyll-archive]: https://github.com/jekyll/jekyll-archives
-[liquid]: https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
+## Why This Matters for Document AI Architecture
+
+If this hypothesis is right, then the path forward isn’t just “better prompts” or “more RAG.”
+
+It’s building systems that treat constraints as first-class:
+
+- Retrieval that enforces permissions and authority
+- Structured extraction that reduces ambiguity
+- Workflow context that narrows scope
+- Refusal policies that are measurable and consistent
+- Verification that ties answers to evidence, not vibes
+
+This is a big part of why Zocuments Research focuses on **workflow-aware constraints** and **structured metadata**: not as “secret sauce,” but as the kind of scaffolding required to force an open-world model to behave in a closed-world job.
+
+## What Would Change My Mind
+
+Because this is a perspective, it should be falsifiable.
+
+I would update this view if we could show that, without hard constraints:
+
+- models reliably refuse when evidence is missing
+- citations consistently support answers
+- permissions are respected under adversarial questioning
+- accuracy holds across format shifts (PDF/DOCX/OCR)
+- performance remains stable under long-tail workflows
+
+If those outcomes are achievable with purely prompt-level controls, then the “open-world vs closed-world” framing is less important.
+
+My bet is they’re not.
+
+## Closing
+
+This is not a complaint about LLMs. It’s an attempt to name the real problem enterprise teams run into:
+
+> The model isn’t just answering questions—it’s bringing an entire worldview with it.
+
+Enterprise document intelligence requires something narrower: **bounded knowledge, explicit authority, and measurable trust**.
+
+This perspective is one of the conceptual reasons Zocuments exists—and it informs the research direction: build repeatable evaluation harnesses that measure overreach, not just correctness.
 
 <script>
 window.tooltips = window.tooltips || []
-window.tooltips.push(['#someId', { content: "This is the text of the tooltip!" }])
-window.tooltips.push(['#someOtherId', { content: "{% include tooltips/example.html %}", placement: "right" }])
 </script>
