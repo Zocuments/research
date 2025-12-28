@@ -5,6 +5,8 @@ permalink: /about/
 main_nav: true
 ---
 
+![alt text]({{ site.baseurl }}/assets/zocuments-document-intelligence.png "Zocuments Document Intelligence"){:.profile}
+
 ## About Zocuments Research
 
 Zocuments Research examines how modern AI systems reason over **document-based evidence**—and why this remains one of the hardest unsolved problems in applied machine intelligence.
