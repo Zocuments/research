@@ -33,7 +33,7 @@ Much of this writing focuses on why these behaviors cannot be reliably achieved 
 
 ## What This Research Is For
 
-This blog serves engineers, researchers, policymakers, and institutions interested in building AI systems that reason carefully over documents—without undermining transparency, accountability, or human oversight.
+This research serves engineers, researchers, policymakers, and institutions interested in building AI systems that reason carefully over documents—without undermining transparency, accountability, or human oversight.
 
 The goal is not automation for its own sake, but the advancement of **document intelligence as a public-interest infrastructure**: systems that help institutions think more clearly, not decide more hastily.
 
