@@ -15,9 +15,7 @@ layout: default
       {% for post in page.posts %}
       <li>
 				<strong><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></strong>
-				<span class="post-date">
-				  {{ content | default: "" | number_of_words | divided_by: 200 | plus: 1 }} min read
-				</span>
+				<span class="post-date"></span>
 			</li>
       {% endfor %}
     </ul>
