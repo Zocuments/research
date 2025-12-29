@@ -3,7 +3,7 @@ layout: post
 title:  "Why LLMs Can Limit Scope — and Document AI Usually Can’t"
 date:   2025-12-27
 author: Zocuments
-categories: Research
+categories: research
 tags: llm document-ai scope permissions rag enterprise
 ---
 
