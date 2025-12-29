@@ -3,7 +3,7 @@ layout: post
 title:  "LLM Document Processing Failures: What Breaks in Real Enterprise Systems"
 date:   2025-12-27
 author: Zocuments
-categories: Research
+categories: research
 ---
 
 Large language models make it look easy to “chat with your documents.” In demos, you upload a PDF, ask a question, and get a confident answer with citations.
