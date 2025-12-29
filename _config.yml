@@ -19,7 +19,7 @@ description: >
 # and never end with a slash. Set it to a blank value if hosting at the
 # root of your server.
 url: "https://zocuments.github.io"
-baseurl: ""
+baseurl: "/research"
 cover: "/assets/header_image.jpg"
 logo: "/assets/logo.png"
 
