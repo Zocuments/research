@@ -9,7 +9,7 @@ cover:  "/assets/instacode.png"
 
 Large language models are trained on vast, open-ended corpora—essentially the public internet. That breadth is often framed as a superpower.
 
-In enterprise settings, I think it may also be a liability.
+In enterprise settings, we think it may also be a liability.
 
 This post is a **perspective**, not a research result. It’s a working hypothesis that helps explain why “chat with your documents” works in demos but breaks under real workplace constraints.
 
@@ -79,7 +79,7 @@ The result is a common pattern:
 
 ## A More Precise Hypothesis
 
-Here’s the clean version of what I’m claiming:
+Here’s the clean version of what we're claiming:
 
 > **LLMs are optimized for open-world knowledge completion, while enterprise document reasoning is a closed-world, role-constrained task. This mismatch drives overreach: hallucination, citation drift, and failure to refuse.**
 
@@ -99,7 +99,7 @@ It’s building systems that treat constraints as first-class:
 
 This is a big part of why Zocuments Research focuses on **workflow-aware constraints** and **structured metadata**: not as “secret sauce,” but as the kind of scaffolding required to force an open-world model to behave in a closed-world job.
 
-## What Would Change My Mind
+## What Would Change Our Mind
 
 Because this is a perspective, it should be falsifiable.
 
@@ -113,7 +113,7 @@ I would update this view if we could show that, without hard constraints:
 
 If those outcomes are achievable with purely prompt-level controls, then the “open-world vs closed-world” framing is less important.
 
-My bet is they’re not.
+Our bet is they’re not.
 
 ## Closing
 
