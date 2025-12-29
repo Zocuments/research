@@ -103,7 +103,7 @@ This is a big part of why Zocuments Research focuses on **workflow-aware constra
 
 Because this is a perspective, it should be falsifiable.
 
-I would update this view if we could show that, without hard constraints:
+We would update this view if we could show that, without hard constraints:
 
 - models reliably refuse when evidence is missing
 - citations consistently support answers
