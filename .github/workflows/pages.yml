@@ -17,6 +17,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,12 +27,12 @@ jobs:
         with:
           ruby-version: "3.2"
           bundler-cache: false
-      
+
       - name: Install Bundler
         run: |
           gem install bundler -N
           bundle --version
-      
+
       - name: Bundle install (verbose)
         run: bundle install --path vendor/bundle --jobs 4 --retry 3 --verbose
 
@@ -39,12 +40,11 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
-      - name: Build site
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+      - name: Build site (verbose)
+        run: bundle exec jekyll build --trace --verbose --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
 
-      # Debug: prove archives are generated
       - name: Debug archives output
         run: |
           echo "=== _site/category ==="
