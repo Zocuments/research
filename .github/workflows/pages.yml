@@ -26,15 +26,18 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.2"
-          bundler-cache: false
+          bundler-cache: true
 
       - name: Install Bundler
         run: |
           gem install bundler -N
           bundle --version
 
+      - name: Configure bundler path
+        run: bundle config set path 'vendor/bundle'
+      
       - name: Bundle install (verbose)
-        run: bundle install --path vendor/bundle --jobs 4 --retry 3 --verbose
+        run: bundle install --jobs 4 --retry 3 --verbose
 
       - name: Setup Pages
         id: pages
