@@ -3,7 +3,7 @@ layout: post
 title:  "Open-World Models, Closed-World Work"
 date:   2025-12-27
 author: Zocuments
-categories: Perspectives
+categories: perspectives
 cover:  "/assets/instacode.png"
 ---
 
